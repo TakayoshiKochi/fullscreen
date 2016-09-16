@@ -78,29 +78,28 @@ unset.
 <p>All <{iframe}> <a>elements</a> have an associated <dfn>iframe fullscreen flag</dfn>. Unless
 stated otherwise it is unset.
 
-<p>All <a>document trees</a> have an associated <dfn>fullscreen element</dfn>. The
-<a>fullscreen element</a> is the topmost <a>element</a> in the <a>document tree</a>'s
-<a>top layer</a> whose <a>fullscreen flag</a> is set, if any, and null otherwise.
+<p>All <a>documents</a> have an associated <dfn>fullscreen element</dfn>. The
+<a>fullscreen element</a> is the topmost <a>element</a> in the <a>document</a>'s <a>top layer</a>
+whose <a>fullscreen flag</a> is set, if any, and null otherwise.
 
-<p>To <dfn>fullscreen an <var>element</var></dfn> within a <a>document tree</a> whose root is
-<var>document</var>, set the <var>element</var>'s <a>fullscreen flag</a> and <a>add</a> it to
-<var>document</var>'s <a>top layer</a>. If the <var>element</var> is in a <a>shadow tree</a>,
-set <a>fullscreen flags</a> of all <a>shadow hosts</a> in its <a>shadow-including ancestors</a>.
+<p>To <dfn>fullscreen an <var>element</var></dfn> within a <var>document</var>, set the
+<var>element</var>'s <a>fullscreen flag</a> and <a>add</a> it to <var>document</var>'s
+<a>top layer</a>. In addition, if the <var>element</var> is in a <a>shadow tree</a>, set
+<a>fullscreen flags</a> of all <a>shadow hosts</a> in its <a>shadow-including ancestors</a>.
 
-<p>To <dfn>unfullscreen an <var>element</var></dfn> within a <a>document tree</a> whose root is
-<var>document</var>, unset the <var>element</var>'s <a>fullscreen flag</a> and
-<a>iframe fullscreen flag</a> (if any), and <a>remove</a> it from <var>document</var>'s
-<a>top layer</a>. If the <var>element</var> is in a <a>shadow tree</a>, unset
-<a>fullscreen flags</a> in its <a>shadow-including ancestors</a>.
+<p>To <dfn>unfullscreen an <var>element</var></dfn> within a <var>document</var>, unset the
+<var>element</var>'s <a>fullscreen flag</a> and <a>iframe fullscreen flag</a> (if any), if the
+<var>element</var> is in a <a>shadow tree</a>, unset <a>fullscreen flags</a> of all
+<a>shadow hosts</a> in its <a>shadow-including ancestors</a>, and <a>remove</a> it from
+<var>document</var>'s <a>top layer</a>.
 
-<p>To <dfn>unfullscreen a document tree</dfn> whose root is <var>document</var>,
+<p>To <dfn>unfullscreen a <var>document</var></dfn>,
 <a lt="unfullscreen an element">unfullscreen</a> all <a>elements</a>, within <var>document</var>'s
 <a>top layer</a>, whose <a>fullscreen flag</a> is set.
 
 <hr>
 
-<p>To <dfn>fully exit fullscreen</dfn> a <a>document tree</a> whose root is <var>document</var>,
-run these steps:
+<p>To <dfn>fully exit fullscreen</dfn> a <a>document</a> <var>document</var>, run these steps:
 
 <ol>
  <li><p>If <var>document</var>'s <a>fullscreen element</a> is null, terminate these steps.
@@ -123,7 +122,7 @@ run these steps:
 
   <ol>
    <li><p>If <var>node</var> is its <a>node document</a>'s <a>fullscreen element</a>,
-   <a>exit fullscreen</a> that <a>document tree</a>.
+   <a>exit fullscreen</a> that <a>document</a>.
 
    <li><p>Otherwise, <a lt="unfullscreen an element">unfullscreen <var>node</var></a> within its
    <a>node document</a>.
@@ -203,7 +202,7 @@ if all of the following are true, and false otherwise:
  <a href=https://www.w3.org/Math/draft-spec/chapter2.html#interf.toplevel>MathML <code>math</code></a>
  element. [[!SVG]] [[!MATHML]]
 
- <li><p><var>element</var> is <a>in a document tree</a>.
+ <li><p><var>element</var> is <a>connected</a>.
 
  <li><p><var>element</var>'s <a>node document</a> is <a>allowed to use</a> the feature indicated by
  attribute name <code>allowfullscreen</code>.
@@ -324,7 +323,7 @@ result and the <a>context object</a> are in the same tree, otherwise return null
  <li><p>Return <var>docs</var>.
 </ol>
 
-<p>To <dfn>exit fullscreen</dfn> a <a>document tree</a> <var>doc</var>, run these steps:
+<p>To <dfn>exit fullscreen</dfn> a <a>document</a> <var>doc</var>, run these steps:
 
 <ol>
  <li><p>Let <var>promise</var> be a new promise.
@@ -376,7 +375,7 @@ result and the <a>context object</a> are in the same tree, otherwise return null
    <!-- cross-process -->
 
    <li><p>For each <var>descendantDoc</var> in <var>descendantDocs</var>, in order,
-   <a lt="unfullscreen a document tree">unfullscreen <var>descendantDoc</var></a>.
+   <a lt="unfullscreen a document">unfullscreen <var>descendantDoc</var></a>.
    <!-- cross-process -->
 
    <li><p>For each <var>exitDoc</var> in <var>exitDocs</var>, in order,
