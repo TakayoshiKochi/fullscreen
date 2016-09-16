@@ -84,14 +84,11 @@ whose <a>fullscreen flag</a> is set, if any, and null otherwise.
 
 <p>To <dfn>fullscreen an <var>element</var></dfn> within a <var>document</var>, set the
 <var>element</var>'s <a>fullscreen flag</a> and <a>add</a> it to <var>document</var>'s
-<a>top layer</a>. In addition, if the <var>element</var> is in a <a>shadow tree</a>, set
-<a>fullscreen flags</a> of all <a>shadow hosts</a> in its <a>shadow-including ancestors</a>.
+<a>top layer</a>.
 
 <p>To <dfn>unfullscreen an <var>element</var></dfn> within a <var>document</var>, unset the
-<var>element</var>'s <a>fullscreen flag</a> and <a>iframe fullscreen flag</a> (if any), if the
-<var>element</var> is in a <a>shadow tree</a>, unset <a>fullscreen flags</a> of all
-<a>shadow hosts</a> in its <a>shadow-including ancestors</a>, and <a>remove</a> it from
-<var>document</var>'s <a>top layer</a>.
+<var>element</var>'s <a>fullscreen flag</a> and <a>iframe fullscreen flag</a> (if any), and
+<a>remove</a> it from <var>document</var>'s <a>top layer</a>.
 
 <p>To <dfn>unfullscreen a <var>document</var></dfn>,
 <a lt="unfullscreen an element">unfullscreen</a> all <a>elements</a>, within <var>document</var>'s
