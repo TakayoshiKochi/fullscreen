@@ -521,13 +521,14 @@ properties apply to this pseudo-element either.
 <h3 id=:fullscreen-pseudo-class><code>:fullscreen</code> pseudo-class</h3>
 
 <p>The <dfn id=css-pc-fullscreen><code>:fullscreen</code></dfn> pseudo-class must match an
-<a>element</a> <var>element</var> that satisfies any of the following conditions:
+<a>element</a> <var>element</var> if any of the following conditions is true:
 
 <ul>
  <li><p><var>element</var>'s <a>fullscreen flag</a> is set.
 
- <li><p><var>element</var> is a <a>shadow host</a> and its <a>node document</a>'s
- <a>fullscreen element</a> is a <a>shadow-including descendant</a> of <var>element</var>.
+ <li><p><var>element</var> is a <a>shadow host</a> and the result of <a>retargeting</a> its
+ <a>node document</a>'s <a>fullscreen element</a> against <var>element</var> is equal to
+ <var>element</var>.
 </ul>
 
 <p class="note no-backref">This makes it different from {{DocumentOrShadowRoot/fullscreenElement}},
