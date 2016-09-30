@@ -297,8 +297,7 @@ false if <a data-link-type="dfn" href="#context-object">context object</a>’s <
     <li>
      <p>Let <var>candidate</var> be the result of <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#retarget">retargeting</a> <a data-link-type="dfn" href="#fullscreen-element">fullscreen element</a> against the <a data-link-type="dfn" href="#context-object">context object</a>. </p>
     <li>
-     <p>If <var>candidate</var> and the <a data-link-type="dfn" href="#context-object">context object</a> are in the same tree,
- return <var>candidate</var>. </p>
+     <p>If <var>candidate</var> and the <a data-link-type="dfn" href="#context-object">context object</a> are in the same tree, return <var>candidate</var>. </p>
     <li>
      <p>Return null. </p>
    </ol>
@@ -438,12 +437,12 @@ displayed fullscreen). </p>
    <p>It does not inherit from any element and is not inherited from. No restrictions are made on what
 properties apply to this pseudo-element either. </p>
    <h3 class="heading settled" data-level="6.3" id=":fullscreen-pseudo-class"><span class="secno">6.3. </span><span class="content"><code>:fullscreen</code> pseudo-class</span><a class="self-link" href="#%3Afullscreen-pseudo-class"></a></h3>
-   <p>The <dfn class="css" data-dfn-type="selector" data-export="" id="css-pc-fullscreen"><code>:fullscreen</code><a class="self-link" href="#css-pc-fullscreen"></a></dfn> pseudo-class must match an <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-element">element</a> <var>element</var> that satisfies any of the following conditions: </p>
+   <p>The <dfn class="css" data-dfn-type="selector" data-export="" id="css-pc-fullscreen"><code>:fullscreen</code><a class="self-link" href="#css-pc-fullscreen"></a></dfn> pseudo-class must match an <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-element">element</a> <var>element</var> if any of the following conditions is true: </p>
    <ul>
     <li>
      <p><var>element</var>’s <a data-link-type="dfn" href="#fullscreen-flag">fullscreen flag</a> is set. </p>
     <li>
-     <p><var>element</var> is a <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#element-shadow-host">shadow host</a> and its <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-node-document">node document</a>’s <a data-link-type="dfn" href="#fullscreen-element">fullscreen element</a> is a <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-shadow-including-descendant">shadow-including descendant</a> of <var>element</var>. </p>
+     <p><var>element</var> is a <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#element-shadow-host">shadow host</a> and the result of <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#retarget">retargeting</a> its <a data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-node-document">node document</a>’s <a data-link-type="dfn" href="#fullscreen-element">fullscreen element</a> against <var>element</var> is equal to <var>element</var>. </p>
    </ul>
    <p class="note no-backref" role="note">This makes it different from <code class="idl"><a data-link-type="idl" href="#dom-document-fullscreenelement">fullscreenElement</a></code>,
 which returns the topmost <a data-link-type="dfn" href="#fullscreen-element">fullscreen element</a>. </p>
